@@ -1,0 +1,5 @@
+*.build
+*.build.bak
+src/*.tar.gz
+deps
+work

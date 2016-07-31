@@ -1,0 +1,25 @@
+/var/log/h2o/error.log {
+	daily
+	missingok
+	rotate 14
+	compress
+	delaycompress
+	notifempty
+	copytruncate
+}
+
+/var/log/h2o/access.log {
+	daily
+	missingok
+	rotate 14
+	compress
+	delaycompress
+	notifempty
+	create 640 root adm
+	sharedscripts
+	postrotate
+		if invoke-rc.d h2o status >/dev/null 2>&1 ; then \
+			invoke-rc.d h2o reload >/dev/null 2>&1; \
+		fi;
+	endscript
+}

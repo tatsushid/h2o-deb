@@ -1,0 +1,277 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: h2o
+Source: https://h2o.examp1e.net/
+
+Files: *
+Copyright: Copyright (c) 2014 DeNA Co., Ltd.
+
+Files: deps/brotli/*
+Copyright: Copyright (c) 2009, 2010, 2013-2015 by the Brotli Authors.
+License: MIT
+
+Files: deps/cloexec/*
+Copyright: Copyright (c) 2015 DeNA Co., Ltd.
+License: MIT
+
+Files: deps/golombset/*
+Copyright: Copyright (c) 2015 Kazuho Oku
+License: MIT
+
+Files: deps/klib/bgzf.*
+Copyright: Copyright (c) 2008 Broad Institute / Massachusetts Institute of Technology
+                         2011 Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/kbtree.h
+Copyright: Copyright 1997-1999, 2001, John-Mark Gurney.
+                     2008-2009, Attractive Chaos <attractor@live.co.uk>
+License: BSD-2-clause
+
+Files: deps/klib/khash.h
+Copyright: Copyright (c) 2008, 2009, 2011 by Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/klist.h
+Copyright: Copyright (c) 2008-2009, by Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/kseq.h
+Copyright: Copyright (c) 2008, 2009, 2011 Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/ksort.h
+Copyright: Copyright (c) 2008, 2009, 2011 Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/kstring.h
+Copyright: Copyright (c) by Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/kvec.h
+Copyright: Copyright (c) 2008, by Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/knetfile.c
+Copyright: Copyright (c) 2008 by Genome Research Ltd (GRL).
+                         2010 by Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/ksa.c
+Copyright: Copyright (c) 2008 Yuta Mori    All Rights Reserved.
+                         2011 Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/klib/ksw.c
+Copyright: Copyright (c) 2011 by Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: deps/libyrmcds/*
+Copyright: Copyright (c) 2013-2015, Cybozu et al.
+License: BSD-2-clause
+
+Files: deps/mruby/*
+Copyright: Copyright (c) 2015 mruby developers
+License: MIT
+
+Files: deps/mruby-digest/*
+Copyright: Copyright (c) 2012 Internet Initiative Japan Inc.
+License: MIT
+
+Files: deps/mruby-dir/*
+Copyright: Copyright (c) 2012 Internet Initiative Japan Inc.
+License: MIT
+
+Files: deps/mruby-env/*
+Copyright: Copyright (c) 2012 Internet Initiative Japan Inc.
+License: MIT
+
+Files: deps/mruby-errno/*
+Copyright: Copyright (c) 2013 Internet Initiative Japan Inc
+License: MIT
+
+Files: deps/mruby-file-stat/*
+Copyright: Copyright (C) 1993-2007 Yukihiro Matsumoto
+           Copyright (C) 2000  Network Applied Communication Laboratory, Inc.
+           Copyright (C) 2000  Information-technology Promotion Agency, Japan
+License: Ruby
+
+Files: deps/mruby-iijson/*
+Copyright: Copyright (c) 2014 Internet Initiative Japan Inc.
+License: MIT
+
+Files: deps/mruby-input-stream/*
+Copyright: Copyright (c) 2015 Masayoshi Takahashi
+License: MIT
+
+Files: deps/mruby-io/*
+Copyright: Copyright (c) 2013 Internet Initiative Japan Inc.
+License: MIT
+
+Files: deps/mruby-onig-regexp/*
+Copyright: Copyright (c) 2015 Yasuhiro Matsumoto (a.k.a mattn)
+License: MIT
+
+Files: deps/mruby-pack/*
+Copyright: Copyright (c) 2012 Internet Initiative Japan Inc.
+License: MIT
+
+Files: deps/mruby-require/*
+Copyright: Copyright (c) 2013 Internet Initiative Japan Inc.
+License: MIT
+
+Files: deps/neverbleed/*
+Copyright: Copyright (c) 2015 Kazuho Oku, DeNA Co., Ltd.
+License: MIT
+
+Files: deps/picohttpparser/*
+Copyright: Copyright (c) 2009-2014 Kazuho Oku, Tokuhiro Matsuno, Daisuke Murase, Shigeo Mitsunari
+License: MIT and Perl
+
+Files: deps/picotest/*
+Copyright: Copyright (c) 2014 DeNA Co., Ltd.
+License: MIT
+
+Files: deps/ssl-conservatory/*
+Copyright: Copyright (C) 2012, iSEC Partners.
+License: MIT
+
+Files: deps/yaml/*
+Copyright: Copyright (c) 2006 Kirill Simonov
+License: MIT
+
+Files: deps/yoml/*
+Copyright: Copyright (c) 2014 DeNA Co., Ltd.
+License: MIT
+
+Files: debian/*
+Copyright: 2016 Tatsushi Demachi <tdemachi@gmail.com>
+License: GPL-2+
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: Ruby
+ Ruby is copyrighted free software by Yukihiro Matsumoto <matz@netlab.jp>.
+ You can redistribute it and/or modify it under either the terms of the
+ 2-clause BSDL (see the file BSDL), or the conditions below:
+ .
+   1. You may make and give away verbatim copies of the source form of the
+      software without restriction, provided that you duplicate all of the
+      original copyright notices and associated disclaimers.
+ .
+   2. You may modify your copy of the software in any way, provided that
+      you do at least ONE of the following:
+ .
+        a) place your modifications in the Public Domain or otherwise
+           make them Freely Available, such as by posting said
+ 	  modifications to Usenet or an equivalent medium, or by allowing
+ 	  the author to include your modifications in the software.
+ .
+        b) use the modified software only within your corporation or
+           organization.
+ .
+        c) give non-standard binaries non-standard names, with
+           instructions on where to get the original software distribution.
+ .
+        d) make other distribution arrangements with the author.
+ .
+   3. You may distribute the software in object code or binary form,
+      provided that you do at least ONE of the following:
+ .
+        a) distribute the binaries and library files of the software,
+ 	  together with instructions (in the manual page or equivalent)
+ 	  on where to get the original distribution.
+ .
+        b) accompany the distribution with the machine-readable source of
+ 	  the software.
+ .
+        c) give non-standard binaries non-standard names, with
+           instructions on where to get the original software distribution.
+ .
+        d) make other distribution arrangements with the author.
+ .
+   4. You may modify and include the part of the software into any other
+      software (possibly commercial).  But some files in the distribution
+      are not written by the author, so that they are not under these terms.
+ .
+      For the list of those files and their copying conditions, see the
+      file LEGAL.
+ .
+   5. The scripts and library files supplied as input to or produced as
+      output from the software do not automatically fall under the
+      copyright of the software, but belong to whomever generated them,
+      and may be sold commercially, and may be aggregated with this
+      software.
+ .
+   6. THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+      IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+      PURPOSE.
+
+License: Perl
+ Perl5 is Copyright (C) 1993-2005, by Larry Wall and others.
+ .
+ It is free software; you can redistribute it and/or modify it under the terms
+ of either:
+ .
+ a) the GNU General Public License as published by the Free Software
+ Foundation; either external linkversion 1, or (at your option) any later
+ versionexternal link, or
+ .
+ b) the "Artistic License".

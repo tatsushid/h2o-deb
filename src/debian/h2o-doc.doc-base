@@ -1,0 +1,10 @@
+Document: h2o-doc
+Title: H2O Manual
+Author: Kazuho Oku
+Abstract: This manual describes what H2O is
+ and how it can be configured.
+Section: System/Administration
+
+Format: HTML
+Index: /usr/share/doc/h2o-doc/html/index.html
+Files: /usr/share/doc/h2o-doc/html/*.html

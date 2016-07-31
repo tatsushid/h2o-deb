@@ -1,0 +1,132 @@
+Source: h2o
+Section: httpd
+Priority: optional
+Maintainer: Tatsushi Demachi <tdemachi@gmail.com>
+Build-Depends: debhelper (>= 9),
+ bison,
+ cmake,
+ dh-systemd (>= 1.5),
+ libio-socket-ssl-perl,
+ libscope-guard-perl,
+ libssl-dev,
+ libtest-tcp-perl,
+ liburi-perl,
+ libuv1-dev,
+ pkg-config,
+ ruby,
+ ruby-dev
+Standards-Version: 3.9.5
+Homepage: https://h2o.examp1e.net/
+#Vcs-Git: git://anonscm.debian.org/collab-maint/h2o.git
+#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/h2o.git;a=summary
+
+Package: h2o
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base, perl
+Recommends: ssl-cert
+Description: H2O - The optimized HTTP/1, HTTP/2 server
+ H2O is a new generation HTTP server that provides quicker response to users
+ with less CPU utilization when compared to older generation of web servers.
+ Designed from ground-up, the server takes full advantage of HTTP/2 features
+ including prioritized content serving and server push, promising outstanding
+ experience to the visitors of your web site.
+
+Package: libh2o0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: H2O library compiled with libuv
+ H2O is a new generation HTTP server that provides quicker response to users
+ with less CPU utilization when compared to older generation of web servers.
+ Designed from ground-up, the server takes full advantage of HTTP/2 features
+ including prioritized content serving and server push, promising outstanding
+ experience to the visitors of your web site.
+ .
+ This package provides the H2O library compiled with libuv which allows you to
+ link your own software to H2O
+
+Package: libh2o-evloop0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: H2O library compiled with its own event loop
+ H2O is a new generation HTTP server that provides quicker response to users
+ with less CPU utilization when compared to older generation of web servers.
+ Designed from ground-up, the server takes full advantage of HTTP/2 features
+ including prioritized content serving and server push, promising outstanding
+ experience to the visitors of your web site.
+ .
+ This package provides the H2O library compiled with its own event loop which
+ allows you to link your own software to H2O
+
+Package: libh2o-dev
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends}
+Description: dev helpers of the H2O library compiled with libuv
+ H2O is a new generation HTTP server that provides quicker response to users
+ with less CPU utilization when compared to older generation of web servers.
+ Designed from ground-up, the server takes full advantage of HTTP/2 features
+ including prioritized content serving and server push, promising outstanding
+ experience to the visitors of your web site.
+ .
+ This package provides the development helpers of the H2O library compiled with
+ libuv.
+
+Package: libh2o-evloop-dev
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends}
+Description: dev helpers of the H2O library compiled with its own event loop
+ H2O is a new generation HTTP server that provides quicker response to users
+ with less CPU utilization when compared to older generation of web servers.
+ Designed from ground-up, the server takes full advantage of HTTP/2 features
+ including prioritized content serving and server push, promising outstanding
+ experience to the visitors of your web site.
+ .
+ This package provides the development helpers of the H2O library compiled with
+ its own event loop.
+
+Package: libh2o-dev-common
+Architecture: all
+Section: libdevel
+Depends: ${misc:Depends}, libh2o0 (= ${binary:Version}) | libh2o-evloop0 (= ${binary:Version})
+Description: H2O library headers
+ H2O is a new generation HTTP server that provides quicker response to users
+ with less CPU utilization when compared to older generation of web servers.
+ Designed from ground-up, the server takes full advantage of HTTP/2 features
+ including prioritized content serving and server push, promising outstanding
+ experience to the visitors of your web site.
+ .
+ This package provides the H2O library headers needed by developers.
+
+Package: h2o-doc
+Architecture: all
+Section: doc
+Description: documentation for H2O
+ H2O is a new generation HTTP server that provides quicker response to users
+ with less CPU utilization when compared to older generation of web servers.
+ Designed from ground-up, the server takes full advantage of HTTP/2 features
+ including prioritized content serving and server push, promising outstanding
+ experience to the visitors of your web site.
+ .
+ This package contains the HTML documentation for H2O.
+
+Package: h2o-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: ${misc:Depends}, h2o (= ${binary:Version})
+Description: H2O debugging symbols
+ H2O is a new generation HTTP server that provides quicker response to users
+ with less CPU utilization when compared to older generation of web servers.
+ Designed from ground-up, the server takes full advantage of HTTP/2 features
+ including prioritized content serving and server push, promising outstanding
+ experience to the visitors of your web site.
+ .
+ This package provides the H2O debugging symbols which can be used to debug
+ crashing server.

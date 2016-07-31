@@ -1,0 +1,64 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" (C) Copyright 2016 Tatsushi Demachi <tdemachi@gmail.com>,
+.\"
+.TH H2O 1 "July 26, 2016"
+
+.SH NAME
+h2o \- The optimized HTTP/1, HTTP/2 server
+
+.SH SYNOPSIS
+.B h2o
+.RI [ options ]
+
+.SH DESCRIPTION
+\fBH2O\fP is a new generation HTTP server that provides quicker response to
+users with less CPU utilization when compared to older generation of web
+servers. Designed from ground-up, the server takes full advantage of HTTP/2
+features including prioritized content serving and server push, promising
+outstanding experience to the visitors of your web site.
+
+.SH OPTIONS
+Full list of command options is following. This can be viewed by running `h2o
+--help`.
+.TP
+\fB\-c\fP, \fB\-\-conf\fP \fIFILE\fP
+Configuration file (default: h2o.conf)
+.TP
+\fB\-m\fP, \fB\-\-mode\fP <\fImode\fP>
+Specifies one of the following mode
+.RS
+.IP worker 0.4i
+Invoked process handles incoming connections (default)
+.IP daemon
+Spawns a master process and exits. `error-log` must be configured when using
+this mode, as all the errors are logged to the file instead of being emitted to
+STDERR
+.IP master
+Invoked process becomes a master process (using the `share/h2o/start_server`
+command) and spawns a worker process for handling incoming connections. Users
+may send SIGHUP to the master process to reconfigure or upgrade the server.
+.IP test
+Tests the configuration and exits
+.RE
+.TP
+\fB\-t\fP, \fB\-\-test\fP
+Synonym of `--mode=test`
+.TP
+\fB\-h\fP, \fB\-\-help\fP
+Show summary of options.
+.TP
+\fB\-v\fP, \fB\-\-version\fP
+Show version of program.
+
+.SH SEE ALSO
+Website: <https://h2o.examp1e.net/>
+
+.SH AUTHOR
+DeNA Co., Ltd., Kazuho Oku, Tatsuhiko Kubo, Domingo Alvarez Duarte, Nick
+Desaulniers, Marc Hörsken, Masahiro Nagano, Jeff Marrison, Daisuke Maki,
+Laurentiu Nicola, Justin Zhu, Tatsuhiro Tsujikawa, Ryosuke Matsumoto, Masaki
+TAGAWA, Masayoshi Takahashi, Chul-Woong Yang, Shota Fukumori, Satoh Hiroh,
+Fastly, Inc., David Carlier
+.PP
+This manual page was written by Tatsushi Demachi <tdemachi@gmail.com> for the
+Debian project (but may be used by others).

@@ -1,0 +1,10 @@
+usr/bin/h2o usr/sbin
+debian/h2o.conf etc/h2o
+usr/share/h2o/annotate-backtrace-symbols
+usr/share/h2o/fastcgi-cgi
+usr/share/h2o/fetch-ocsp-response
+usr/share/h2o/kill-on-close
+usr/share/h2o/setuidgid
+usr/share/h2o/start_server
+usr/share/h2o/ca-bundle.crt
+usr/share/h2o/status/index.html

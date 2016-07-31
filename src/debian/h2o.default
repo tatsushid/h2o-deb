@@ -1,0 +1,9 @@
+# Defaults for h2o initscript
+# sourced by /etc/init.d/h2o
+# installed at /etc/default/h2o by the maintainer scripts
+
+#
+# This is a POSIX shell fragment
+#
+
+#CONFIG_FILE="/etc/h2o/h2o.conf"

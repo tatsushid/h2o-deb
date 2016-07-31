@@ -1,0 +1,31 @@
+FROM ubuntu:16.04
+ENV DEBEMAIL="tdemachi@gmail.com" DEBFULLNAME="Tatsushi Demachi"
+ARG PKGVER
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        bison \
+        build-essential \
+        cmake \
+        curl \
+        dh-make \
+        dh-systemd \
+        fakeroot \
+        libio-socket-ssl-perl \
+        libscope-guard-perl \
+        libssl-dev \
+        libtest-tcp-perl \
+        liburi-perl \
+        libuv1-dev \
+        pkg-config \
+        ruby \
+        ruby-dev
+COPY src/v${PKGVER}.tar.gz /tmp/
+RUN mkdir -p /tmp/h2o/h2o-${PKGVER} \
+    && cd /tmp/h2o/h2o-${PKGVER} \
+    && tar xzf /tmp/v${PKGVER}.tar.gz --strip-components=1 \
+    && tar cJf ../h2o_${PKGVER}.orig.tar.xz .
+ADD src/debian/ /tmp/h2o/h2o-${PKGVER}/debian/
+RUN cd /tmp/h2o/h2o-${PKGVER} \
+    && dpkg-buildpackage -us -uc \
+    && tar -czf /tmp/h2o.tar.gz -C /tmp/h2o --exclude=./h2o-${PKGVER} .
+CMD ["/bin/true"]

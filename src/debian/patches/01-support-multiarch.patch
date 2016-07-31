@@ -1,0 +1,48 @@
+Description: Add support multiarch build
+Origin: vendor
+Author: Tatsushi Demachi <tdemachi@gmail.com>
+Last-Update: 2016-07-28
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -39,6 +39,8 @@
+ 
+ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+ 
++INCLUDE(GNUInstallDirs)
++
+ FIND_PACKAGE(PkgConfig)
+ FIND_PACKAGE(Threads REQUIRED)
+ 
+@@ -339,12 +341,12 @@
+     TARGET_LINK_LIBRARIES(libh2o ${OPENSSL_LIBRARIES})
+     TARGET_LINK_LIBRARIES(libh2o-evloop ${OPENSSL_LIBRARIES})
+     IF (LIBUV_FOUND AND NOT WITHOUT_LIBS)
+-        INSTALL(TARGETS libh2o DESTINATION lib)
++        INSTALL(TARGETS libh2o DESTINATION ${CMAKE_INSTALL_LIBDIR})
+     ELSE ()
+         SET_TARGET_PROPERTIES(libh2o PROPERTIES EXCLUDE_FROM_ALL 1)
+     ENDIF ()
+     IF (NOT WITHOUT_LIBS)
+-	INSTALL(TARGETS libh2o-evloop DESTINATION lib)
++        INSTALL(TARGETS libh2o-evloop DESTINATION ${CMAKE_INSTALL_LIBDIR})
+     ELSE ()
+         SET_TARGET_PROPERTIES(libh2o-evloop PROPERTIES EXCLUDE_FROM_ALL 1)
+     ENDIF()
+@@ -427,14 +429,14 @@
+ 
+ INSTALL(TARGETS h2o
+     RUNTIME DESTINATION bin
+-    LIBRARY DESTINATION lib)
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 
+ IF (NOT WITHOUT_LIBS)
+     INSTALL(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h")
+     IF (LIBUV_FOUND)
+-        INSTALL(FILES "${CMAKE_BINARY_DIR}/libh2o.pc" DESTINATION lib/pkgconfig)
++        INSTALL(FILES "${CMAKE_BINARY_DIR}/libh2o.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+     ENDIF ()
+-    INSTALL(FILES "${CMAKE_BINARY_DIR}/libh2o-evloop.pc" DESTINATION lib/pkgconfig)
++    INSTALL(FILES "${CMAKE_BINARY_DIR}/libh2o-evloop.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ ENDIF ()
+ 
+ INSTALL(PROGRAMS share/h2o/annotate-backtrace-symbols share/h2o/fastcgi-cgi share/h2o/fetch-ocsp-response share/h2o/kill-on-close share/h2o/setuidgid share/h2o/start_server DESTINATION share/h2o)

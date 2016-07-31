@@ -1,0 +1,2 @@
+usr/lib/*/libh2o-evloop.so
+usr/lib/*/pkgconfig/libh2o-evloop.pc
