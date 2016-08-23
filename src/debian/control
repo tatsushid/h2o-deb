@@ -66,7 +66,7 @@ Description: H2O library compiled with its own event loop
 Package: libh2o-dev
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, libh2o0 (= ${binary:Version})
 Description: dev helpers of the H2O library compiled with libuv
  H2O is a new generation HTTP server that provides quicker response to users
  with less CPU utilization when compared to older generation of web servers.
@@ -80,7 +80,7 @@ Description: dev helpers of the H2O library compiled with libuv
 Package: libh2o-evloop-dev
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, libh2o-evloop0 (= ${binary:Version})
 Description: dev helpers of the H2O library compiled with its own event loop
  H2O is a new generation HTTP server that provides quicker response to users
  with less CPU utilization when compared to older generation of web servers.
