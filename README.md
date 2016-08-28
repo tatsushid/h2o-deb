@@ -1,6 +1,8 @@
 H2O Unofficial Debian package builder
 =====================================
 
+[![Build Status](https://travis-ci.org/tatsushid/h2o-deb.svg?branch=master)](https://travis-ci.org/tatsushid/h2o-deb)
+
 This provides [H2O](https://h2o.examp1e.net/) `debian` directory and required
 files e.g. SysVinit, systemd service etc. to build Debian package for Debian
 and Ubuntu.
