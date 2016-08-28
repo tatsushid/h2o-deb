@@ -9,6 +9,32 @@ and Ubuntu.
 
 If you search RPM package, please see [h2o-rpm](https://github.com/tatsushid/h2o-rpm)
 
+## How to use prebuilt Debian package
+
+This has [Bintray Debian package repository](https://bintray.com/tatsushid/h2o-deb)
+so if you'd like to just install such a prebuilt package, please do following.
+
+```bash
+# Add GPG key
+curl -SL 'https://bintray.com/user/downloadSubjectPublicKey?username=bintray' | sudo apt-key add -
+
+# If your system is Debian jessie (8.x)
+echo "deb http://dl.bintray.com/tatsushid/h2o-deb jessie-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
+
+# If your system is Ubuntu trusty (14.04)
+echo "deb http://dl.bintray.com/tatsushid/h2o-deb trusty-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
+
+# If your system is Ubuntu xenial (16.04)
+echo "deb http://dl.bintray.com/tatsushid/h2o-deb xenial-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
+```
+
+Once it has done, you can install packages in the repository by
+
+```bash
+sudo apt-get update
+sudo apt-get install h2o
+```
+
 ## How to build Debian package
 
 If you have a docker environment, you can build Debian packages by just running
