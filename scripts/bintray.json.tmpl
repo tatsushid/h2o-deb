@@ -1,0 +1,53 @@
+{
+    "package": {
+        "name": "@PKG_NAME@",
+        "repo": "h2o-deb",
+        "subject": "tatsushid",
+        "desc": "@PKG_NAME@ Debian package",
+        "website_url": "https://github.com/tatsushid/h2o-deb",
+        "issue_tracker_url": "https://github.com/tatsushid/h2o-deb/issues",
+        "vcs_url": "https://github.com/tatsushid/h2o-deb.git",
+        "licenses": ["MIT"]
+    },
+
+    "version": {
+        "name": "@PKG_VERSION@",
+        "desc": "Automated release from master",
+        "release": "@DATE@"
+    },
+
+    "files": [
+        {
+            "includePattern": "./debian8\.build/(@PKG_NAME@_@PKG_VERSION@.*\.deb)$",
+            "uploadPattern": "pool/main/@PKG_DIR@/$1",
+            "matrixParams": {
+                "deb_distribution": "jessie-backports",
+                "deb_component": "main",
+                "deb_architecture": "amd64",
+                "override": 1
+            }
+        },
+        {
+            "includePattern": "./ubuntu1404\.build/(@PKG_NAME@_@PKG_VERSION@.*\.deb)$",
+            "uploadPattern": "pool/main/@PKG_DIR@/$1",
+            "matrixParams": {
+                "deb_distribution": "trusty-backports",
+                "deb_component": "main",
+                "deb_architecture": "amd64",
+                "override": 1
+            }
+        },
+        {
+            "includePattern": "./ubuntu1604\.build/(@PKG_NAME@_@PKG_VERSION@.*\.deb)$",
+            "uploadPattern": "pool/main/@PKG_DIR@/$1",
+            "matrixParams": {
+                "deb_distribution": "xenial-backports",
+                "deb_component": "main",
+                "deb_architecture": "amd64",
+                "override": 1
+            }
+        }
+    ],
+
+    "publish": true
+}

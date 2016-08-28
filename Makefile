@@ -49,6 +49,17 @@ deps/$(LIBUV_DEBIAN):
 	rm -rf tmp Dockerfile
 	docker images | grep -q $(IMAGE_NAME) && docker rmi $(IMAGE_NAME) || true
 
+bintray:
+	./scripts/build_bintray_json.bash \
+		h2o \
+		h2o-doc \
+		h2o-dbg \
+		libh2o0 \
+		libh2o-evloop0 \
+		libh2o-dev-common \
+		libh2o-dev \
+		libh2o-evloop-dev
+
 work: src/$(SOURCE_ARCHIVE)
 	mkdir -p work
 	tar -xzf src/$(SOURCE_ARCHIVE) -C work --strip-components=1
@@ -56,7 +67,7 @@ work: src/$(SOURCE_ARCHIVE)
 	cd work && QUILT_PATCHES="debian/patches" quilt setup debian/patches/series
 
 clean:
-	rm -rf *.build.bak *.build deps tmp work Dockerfile
+	rm -rf *.build.bak *.build deps tmp bintray work Dockerfile
 	docker images | grep -q $(IMAGE_NAME)-deb8 && docker rmi $(IMAGE_NAME)-deb8 || true
 	docker images | grep -q $(IMAGE_NAME)-ub1404 && docker rmi $(IMAGE_NAME)-ub1404 || true
 	docker images | grep -q $(IMAGE_NAME)-ub1604 && docker rmi $(IMAGE_NAME)-ub1604 || true
