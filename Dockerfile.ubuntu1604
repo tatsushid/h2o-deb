@@ -26,6 +26,8 @@ RUN mkdir -p /tmp/h2o/h2o-${PKGVER} \
     && tar cJf ../h2o_${PKGVER}.orig.tar.xz .
 ADD src/debian/ /tmp/h2o/h2o-${PKGVER}/debian/
 RUN cd /tmp/h2o/h2o-${PKGVER} \
+    && mv -f debian/changelog.ubuntu1604 debian/changelog \
+    && rm -f debian/changelog.* \
     && dpkg-buildpackage -us -uc \
     && tar -czf /tmp/h2o.tar.gz -C /tmp/h2o --exclude=./h2o-${PKGVER} .
 CMD ["/bin/true"]

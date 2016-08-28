@@ -1,0 +1,17 @@
+h2o (2.0.2-1~bpo8+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Sun, 28 Aug 2016 02:38:34 +0900
+
+h2o (2.0.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 24 Aug 2016 01:03:48 +0900
+
+h2o (2.0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Tue, 26 Jul 2016 14:33:56 +0000
