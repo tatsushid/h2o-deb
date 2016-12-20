@@ -4,6 +4,7 @@ Source: https://h2o.examp1e.net/
 
 Files: *
 Copyright: Copyright (c) 2014 DeNA Co., Ltd.
+License: MIT
 
 Files: deps/brotli/*
 Copyright: Copyright (c) 2009, 2010, 2013-2015 by the Brotli Authors.
