@@ -13,6 +13,7 @@ RUN apt-get update \
         dh-make \
         dh-systemd \
         fakeroot \
+        git \
         libio-socket-ssl-perl \
         libscope-guard-perl \
         libssl-dev \

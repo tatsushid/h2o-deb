@@ -11,6 +11,7 @@ RUN echo "deb http://httpredir.debian.org/debian jessie-backports main" > /etc/a
         dh-make \
         dh-systemd \
         fakeroot \
+        git \
         libio-socket-ssl-perl \
         libscope-guard-perl \
         libssl-dev \
