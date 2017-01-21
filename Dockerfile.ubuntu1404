@@ -1,6 +1,7 @@
 FROM ubuntu:14.04
 ENV DEBEMAIL="tdemachi@gmail.com" DEBFULLNAME="Tatsushi Demachi"
 ARG PKGVER
+ENV PATH_TINY_PERL=libpath-tiny-perl_0.098-1_all.deb
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         automake \
@@ -15,14 +16,22 @@ RUN apt-get update \
         fakeroot \
         git \
         libio-socket-ssl-perl \
+        libjson-perl \
+        libpath-tiny-perl \
         libscope-guard-perl \
         libssl-dev \
+        libtest-exception-perl \
         libtest-tcp-perl \
         libtool \
         liburi-perl \
+        netcat \
         pkg-config \
         ruby \
-        ruby-dev
+        ruby-dev \
+    && : install newer Path::Tiny Perl module to avoid a test error \
+    && cd /tmp \
+    && curl -SLO "http://archive.ubuntu.com/ubuntu/pool/main/libp/libpath-tiny-perl/$PATH_TINY_PERL" \
+    && dpkg -i "$PATH_TINY_PERL"
 ADD ./deps /tmp/deps
 RUN cd /tmp/deps \
     && LIBUV_VERSION="$(ls libuv1_*.orig.tar.gz | sed -e 's/libuv1_\(.*\)\.orig\.tar\.gz/\1/' | sort -r | head -n1)" \

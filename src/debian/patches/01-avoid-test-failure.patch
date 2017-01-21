@@ -1,0 +1,10 @@
+--- a/t/Util.pm
++++ b/t/Util.pm
+@@ -117,6 +117,7 @@
+     if ($pid != 0) {
+         print STDERR "spawning $args{argv}->[0]... ";
+         if ($args{is_ready}) {
++            sleep 0.5;
+             while (1) {
+                 if ($args{is_ready}->()) {
+                     print STDERR "done\n";

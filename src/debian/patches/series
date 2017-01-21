@@ -1,2 +1,1 @@
-01-support-multiarch.patch
-02-fix-freeze-test
+01-avoid-test-failure.patch

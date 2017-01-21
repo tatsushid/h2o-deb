@@ -12,10 +12,14 @@ RUN apt-get update \
         fakeroot \
         git \
         libio-socket-ssl-perl \
+        libjson-perl \
+        libpath-tiny-perl \
         libscope-guard-perl \
         libssl-dev \
+        libtest-exception-perl \
         libtest-tcp-perl \
         liburi-perl \
+        netcat \
         libuv1-dev \
         pkg-config \
         ruby \

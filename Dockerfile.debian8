@@ -1,6 +1,7 @@
 FROM debian:8
 ENV DEBEMAIL="tdemachi@gmail.com" DEBFULLNAME="Tatsushi Demachi"
 ARG PKGVER
+ENV PATH_TINY_PERL=libpath-tiny-perl_0.098-1_all.deb
 RUN echo "deb http://httpredir.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/devel.list \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -13,15 +14,23 @@ RUN echo "deb http://httpredir.debian.org/debian jessie-backports main" > /etc/a
         fakeroot \
         git \
         libio-socket-ssl-perl \
+        libjson-perl \
+        libpath-tiny-perl \
         libscope-guard-perl \
         libssl-dev \
+        libtest-exception-perl \
         libtest-tcp-perl \
         liburi-perl \
+        netcat \
         pkg-config \
         ruby \
         ruby-dev \
     && apt-get install -y --no-install-recommends -t jessie-backports \
-        libuv1-dev
+        libuv1-dev \
+    && : install newer Path::Tiny Perl module to avoid a test error \
+    && cd /tmp \
+    && curl -SLO "http://ftp.debian.org/debian/pool/main/libp/libpath-tiny-perl/$PATH_TINY_PERL" \
+    && dpkg -i "$PATH_TINY_PERL"
 COPY src/v${PKGVER}.tar.gz /tmp/
 RUN mkdir -p /tmp/h2o/h2o-${PKGVER} \
     && cd /tmp/h2o/h2o-${PKGVER} \
