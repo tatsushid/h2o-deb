@@ -34,7 +34,7 @@ deps/$(LIBUV_DEBIAN):
 	[ -d deps ] || mkdir deps
 	cd deps && curl -SLO http://http.debian.net/debian/pool/main/libu/libuv1/$(LIBUV_DEBIAN)
 
-%.build: src/debian/* src/$(SOURCE_ARCHIVE) deps/$(LIBUV_DSC) deps/$(LIBUV_ORIG) deps/$(LIBUV_DEBIAN)
+%.build: src/debian/* src/debian/patches/* src/$(SOURCE_ARCHIVE) deps/$(LIBUV_DSC) deps/$(LIBUV_ORIG) deps/$(LIBUV_DEBIAN)
 	[ -d $@.bak ] && rm -rf $@.bak || :
 	[ -d $@ ] && mv $@ $@.bak || :
 	cp Dockerfile.$* Dockerfile
