@@ -1,3 +1,15 @@
+h2o (2.1.0-2~bpo8+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 01 Feb 2017 00:16:34 +0900
+
+h2o (2.1.0-2) unstable; urgency=medium
+
+  * Add missing mruby_handler scripts which are required to start h2o
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 01 Feb 2017 00:14:41 +0900
+
 h2o (2.1.0-1~bpo8+1) jessie-backports; urgency=low
 
   * Rebuild for jessie-backports

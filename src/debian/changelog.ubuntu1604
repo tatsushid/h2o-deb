@@ -1,3 +1,15 @@
+h2o (2.1.0-2~ubuntu16.04.1) xenial-backports; urgency=medium
+
+  * Rebuild for xenial-backports
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 01 Feb 2017 00:19:49 +0900
+
+h2o (2.1.0-2) unstable; urgency=medium
+
+  * Add missing mruby_handler scripts which are required to start h2o
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 01 Feb 2017 00:14:41 +0900
+
 h2o (2.1.0-1~ubuntu16.04.1) xenial-backports; urgency=low
 
   * Rebuild for xenial-backports
