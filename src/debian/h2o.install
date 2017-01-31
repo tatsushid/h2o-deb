@@ -8,3 +8,10 @@ usr/share/h2o/setuidgid
 usr/share/h2o/start_server
 usr/share/h2o/ca-bundle.crt
 usr/share/h2o/status/index.html
+usr/share/h2o/mruby/acl.rb
+usr/share/h2o/mruby/bootstrap.rb
+usr/share/h2o/mruby/dos_detector.rb
+usr/share/h2o/mruby/htpasswd.rb
+usr/share/h2o/mruby/lru_cache.rb
+usr/share/h2o/mruby/preloads.rb
+usr/share/h2o/mruby/trie_addr.rb
