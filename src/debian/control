@@ -7,14 +7,19 @@ Build-Depends: debhelper (>= 9),
  cmake,
  dh-systemd (>= 1.5),
  libio-socket-ssl-perl,
+ libjson-perl,
+ libpath-tiny-perl,
+ libplack-perl,
  libscope-guard-perl,
  libssl-dev,
+ libtest-exception-perl,
  libtest-tcp-perl,
  liburi-perl,
  libuv1-dev,
  pkg-config,
  ruby,
- ruby-dev
+ ruby-dev,
+ starlet
 Standards-Version: 3.9.5
 Homepage: https://h2o.examp1e.net/
 #Vcs-Git: git://anonscm.debian.org/collab-maint/h2o.git
