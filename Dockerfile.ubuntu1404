@@ -18,6 +18,7 @@ RUN apt-get update \
         libio-socket-ssl-perl \
         libjson-perl \
         libpath-tiny-perl \
+        libplack-perl \
         libscope-guard-perl \
         libssl-dev \
         libtest-exception-perl \
@@ -28,6 +29,7 @@ RUN apt-get update \
         pkg-config \
         ruby \
         ruby-dev \
+        starlet \
     && : install newer Path::Tiny Perl module to avoid a test error \
     && cd /tmp \
     && curl -SLO "http://archive.ubuntu.com/ubuntu/pool/main/libp/libpath-tiny-perl/$PATH_TINY_PERL" \

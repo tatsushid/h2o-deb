@@ -1,3 +1,15 @@
+h2o (2.2.0-1~ubuntu14.04.1) trusty-backports; urgency=medium
+
+  * Rebuild for trusty-backports
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 07 Apr 2017 21:42:54 +0900
+
+h2o (2.2.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 07 Apr 2017 21:39:20 +0900
+
 h2o (2.1.0-2~ubuntu14.04.1) trusty-backports; urgency=medium
 
   * Rebuild for trusty-backports

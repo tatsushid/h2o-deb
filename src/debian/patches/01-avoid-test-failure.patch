@@ -8,3 +8,76 @@
              while (1) {
                  if ($args{is_ready}->()) {
                      print STDERR "done\n";
+--- a/t/50status.t
++++ b/t/50status.t
+@@ -54,7 +54,7 @@
+         status: ON
+ EOT
+     my $resp = `curl --silent -o /dev/stderr 'http://127.0.0.1:$server->{port}/beeb98fcf148317be5fe5d763c658bc9ea9c087a' 2>&1 > /dev/null`;
+-    my $resp = `curl --silent -o /dev/stderr 'http://127.0.0.1:$server->{port}/s/json?show=events' 2>&1 > /dev/null`;
++    $resp = `curl --silent -o /dev/stderr 'http://127.0.0.1:$server->{port}/s/json?show=events' 2>&1 > /dev/null`;
+     my $jresp = decode_json("$resp");
+     is $jresp->{'connections'}, undef, "Connections not present";
+     is $jresp->{'requests'}, undef, "Requests not present";
+--- a/t/50fastcgi.t
++++ b/t/50fastcgi.t
+@@ -14,6 +14,7 @@
+     if system("perl -MPlack::Handler::FCGI /dev/null > /dev/null 2>&1") != 0;
+ 
+ my $tempdir = tempdir(CLEANUP => 1);
++chmod 0755, $tempdir;
+ my $fcgi_port = empty_port();
+ 
+ # gather information of test data
+--- a/t/50reverse-proxy-added-headers.t
++++ b/t/50reverse-proxy-added-headers.t
+@@ -14,7 +14,7 @@
+ my $upstream_port = empty_port();
+ 
+ my $guard = spawn_server(
+-    argv     => [ qw(plackup -s Starlet --keepalive-timeout 100 --access-log /dev/null --listen), $upstream_port, ASSETS_DIR . "/upstream.psgi" ],
++    argv     => [ qw(plackup -s Starlet --keepalive-timeout 100 --access-log /dev/null --listen), ":$upstream_port", ASSETS_DIR . "/upstream.psgi" ],
+     is_ready =>  sub {
+         check_port($upstream_port);
+     },
+--- a/t/50reverse-proxy-disconnected-keepalive.t
++++ b/t/50reverse-proxy-disconnected-keepalive.t
+@@ -27,6 +27,7 @@
+     });
+ 
+     my $upstream = spawn_upstream($sockfn);
++    chmod 0777, $sockfn;
+     doit("[unix:$sockfn]");
+ };
+ 
+@@ -63,7 +64,8 @@
+     my $addr = shift;
+     spawn_server(
+         argv     => [
+-            qw(plackup -s Starlet --max-keepalive-reqs 100 --keepalive-timeout 1 --access-log /dev/null --listen), $addr,
++            qw(plackup -s Starlet --max-keepalive-reqs 100 --keepalive-timeout 1 --access-log /dev/null --listen),
++            $addr =~ /^\d+$/ ? ":$addr" : $addr,
+             ASSETS_DIR . "/upstream.psgi"
+         ],
+         is_ready => sub {
+--- a/t/50servername.t
++++ b/t/50servername.t
+@@ -56,7 +56,7 @@
+ my $upstream_port = empty_port();
+ 
+ my $upstream = spawn_server(
+-	argv     => [ qw(plackup -s Starlet --keepalive-timeout 100 --access-log /dev/null --listen), $upstream_port, ASSETS_DIR . "/upstream.psgi" ],
++	argv     => [ qw(plackup -s Starlet --keepalive-timeout 100 --access-log /dev/null --listen), ":$upstream_port", ASSETS_DIR . "/upstream.psgi" ],
+ 	is_ready =>  sub {
+ 		check_port($upstream_port);
+ 	},
+--- a/t/50reverse-proxy/test.pl
++++ b/t/50reverse-proxy/test.pl
+@@ -74,6 +74,7 @@
+         },
+     );
+ };
++chmod 0777, $unix_socket_file if $unix_socket_file;
+ 
+ my $server = spawn_h2o(<< "EOT");
+ hosts:

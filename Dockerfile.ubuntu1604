@@ -14,6 +14,7 @@ RUN apt-get update \
         libio-socket-ssl-perl \
         libjson-perl \
         libpath-tiny-perl \
+        libplack-perl \
         libscope-guard-perl \
         libssl-dev \
         libtest-exception-perl \
@@ -23,7 +24,8 @@ RUN apt-get update \
         libuv1-dev \
         pkg-config \
         ruby \
-        ruby-dev
+        ruby-dev \
+        starlet
 COPY src/v${PKGVER}.tar.gz /tmp/
 RUN mkdir -p /tmp/h2o/h2o-${PKGVER} \
     && cd /tmp/h2o/h2o-${PKGVER} \
