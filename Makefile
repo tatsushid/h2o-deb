@@ -38,7 +38,11 @@ deps/$(LIBUV_DEBIAN):
 	[ -d $@.bak ] && rm -rf $@.bak || :
 	[ -d $@ ] && mv $@ $@.bak || :
 	cp Dockerfile.$* Dockerfile
+ifdef IS_TRAVIS_CI
+	tar -czf - Dockerfile src deps | docker build -t $(IMAGE_NAME) --build-arg PKGVER=$(PKGVER) - >out.log 2>&1 || (cat out.log && false)
+else
 	tar -czf - Dockerfile src deps | docker build -t $(IMAGE_NAME) --build-arg PKGVER=$(PKGVER) -
+endif
 	docker run --name $(IMAGE_NAME)-tmp $(IMAGE_NAME)
 	mkdir -p tmp
 	docker wait $(IMAGE_NAME)-tmp
