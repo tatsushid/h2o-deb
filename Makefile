@@ -39,6 +39,8 @@ deps/$(LIBUV_DEBIAN):
 	[ -d $@ ] && mv $@ $@.bak || :
 	cp Dockerfile.$* Dockerfile
 ifdef IS_TRAVIS_CI
+	trap 'kill $$(jobs -p)' EXIT; \
+	while :; do echo "image building..."; sleep 60; done & \
 	tar -czf - Dockerfile src deps | docker build -t $(IMAGE_NAME) --build-arg PKGVER=$(PKGVER) - >out.log 2>&1 || (cat out.log && false)
 else
 	tar -czf - Dockerfile src deps | docker build -t $(IMAGE_NAME) --build-arg PKGVER=$(PKGVER) -
