@@ -1,3 +1,10 @@
+h2o (2.2.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Renew library package symbols
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Sun, 30 Apr 2017 14:14:57 +0900
+
 h2o (2.2.0-2) unstable; urgency=low
 
   * Fix package dependency at building

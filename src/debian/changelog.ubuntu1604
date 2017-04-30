@@ -1,3 +1,16 @@
+h2o (2.2.2-1~ubuntu16.04.1) xenial-backports; urgency=medium
+
+  * Rebuild for xenial-backports
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Sun, 30 Apr 2017 14:20:10 +0900
+
+h2o (2.2.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Renew library package symbols
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Sun, 30 Apr 2017 14:14:57 +0900
+
 h2o (2.2.0-2~ubuntu16.04.1) xenial-backports; urgency=low
 
   * Rebuild for xenial-backports
