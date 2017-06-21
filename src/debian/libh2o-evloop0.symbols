@@ -338,6 +338,7 @@ libh2o-evloop.so.0.13 libh2o-evloop0 #MINVER#
  h2o_socketpool_return@Base 2.2.0
  h2o_socketpool_set_timeout@Base 2.2.0
  h2o_spawnp@Base 2.2.0
+ h2o_ssl_register_alpn_protocols@Base 2.2.2
  h2o_ssl_register_npn_protocols@Base 2.2.0
  h2o_start_response@Base 2.2.0
  h2o_status_register@Base 2.2.0
