@@ -59,6 +59,9 @@ RUN cd $HOME/h2o/h2o-${PKGVER} \
     && mv -f debian/changelog.ubuntu1404 debian/changelog \
     && rm -f debian/changelog.*
 RUN cd $HOME/h2o/h2o-${PKGVER} \
+    && sed -i -e '/h2o_ssl_register_alpn_protocols/d' debian/libh2o0.symbols \
+    && sed -i -e '/h2o_ssl_register_alpn_protocols/d' debian/libh2o-evloop0.symbols
+RUN cd $HOME/h2o/h2o-${PKGVER} \
     && dpkg-buildpackage -us -uc \
     && tar -czf /tmp/h2o.tar.gz -C $HOME/h2o --exclude=./h2o-${PKGVER} .
 CMD ["/bin/true"]
