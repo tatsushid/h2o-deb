@@ -21,6 +21,9 @@ curl -SL 'https://bintray.com/user/downloadSubjectPublicKey?username=bintray' | 
 # If your system is Debian jessie (8.x)
 echo "deb http://dl.bintray.com/tatsushid/h2o-deb jessie-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
 
+# If your system is Debian stretch (9.x)
+echo "deb http://dl.bintray.com/tatsushid/h2o-deb stretch-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
+
 # If your system is Ubuntu trusty (14.04)
 echo "deb http://dl.bintray.com/tatsushid/h2o-deb trusty-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
 
@@ -53,6 +56,7 @@ make debian8
 Now this understands
 
 - debian8
+- debian9
 - ubuntu1404
 - ubuntu1604
 
