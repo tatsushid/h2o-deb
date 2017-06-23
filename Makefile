@@ -15,7 +15,7 @@ LIBUV_DEBIAN := $(LIBUV_NAME)-$(LIBUV_RELEASE).debian.tar.xz
 
 .PHONY: all clean debian8 debian9 ubuntu1404 ubuntu1604
 
-all: debian8 ubuntu1404 ubuntu1604
+all: debian8 debian9 ubuntu1404 ubuntu1604
 debian8: debian8.build
 debian9: debian9.build
 ubuntu1404: ubuntu1404.build
