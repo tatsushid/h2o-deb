@@ -5,9 +5,14 @@ services:
 
 language: c
 
+env:
+  - TARGET_DISTRIBUTION=debian8
+  - TARGET_DISTRIBUTION=debian9
+  - TARGET_DISTRIBUTION=ubuntu1404
+  - TARGET_DISTRIBUTION=ubuntu1604
+
 script:
-  - make
-  - ls
+  - make "$TARGET_DISTRIBUTION"
 
 before_deploy:
   - make bintray
