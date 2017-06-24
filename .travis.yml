@@ -11,6 +11,10 @@ env:
   - TARGET_DISTRIBUTION=ubuntu1404
   - TARGET_DISTRIBUTION=ubuntu1604
 
+addons:
+  hosts:
+    - 127.0.0.1.XIP.IO
+
 script:
   - make "$TARGET_DISTRIBUTION"
 
