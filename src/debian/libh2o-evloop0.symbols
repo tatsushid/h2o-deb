@@ -231,6 +231,7 @@ libh2o-evloop.so.0.13 libh2o-evloop0 #MINVER#
  h2o_memcached_receiver@Base 2.2.0
  h2o_memcached_set@Base 2.2.0
  h2o_mime_attributes_as_is@Base 2.2.0
+ h2o_mimemap_clear_types@Base 2.2.3
  h2o_mimemap_clone@Base 2.2.0
  h2o_mimemap_create@Base 2.2.0
  h2o_mimemap_define_dynamic@Base 2.2.0

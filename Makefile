@@ -1,4 +1,4 @@
-PKGVER := 2.2.2
+PKGVER := 2.2.3
 SOURCE_ARCHIVE := v$(PKGVER).tar.gz
 TARGZ_FILE := h2o.tar.gz
 IMAGE_NAME := h2o-package
