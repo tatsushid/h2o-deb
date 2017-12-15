@@ -1,3 +1,15 @@
+h2o (2.2.4-1~bpo9+1) stretch-backports; urgency=high
+
+  * Rebuild for stretch-backports
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 15 Dec 2017 13:33:45 +0900
+
+h2o (2.2.4-1) unstable; urgency=high
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 15 Dec 2017 13:30:01 +0900
+
 h2o (2.2.3-1~bpo9+1) stretch-backports; urgency=high
 
   * Rebuild for stretch-backports
