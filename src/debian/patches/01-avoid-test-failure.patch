@@ -32,7 +32,7 @@
      },
 --- a/t/50reverse-proxy-disconnected-keepalive.t
 +++ b/t/50reverse-proxy-disconnected-keepalive.t
-@@ -63,7 +64,8 @@
+@@ -63,7 +63,8 @@
      my $addr = shift;
      spawn_server(
          argv     => [
@@ -75,3 +75,14 @@
          like $resp, qr{^HTTP/[^ ]* 200\s}is;
      });
  };
+--- a/t/50internal-redirect.t
++++ b/t/50internal-redirect.t
+@@ -11,7 +11,7 @@
+ 
+ my $upstream_port = empty_port();
+ my $upstream = spawn_server(
+-    argv     => [ qw(plackup -s Starlet --access-log /dev/null --listen), $upstream_port, ASSETS_DIR . "/upstream.psgi" ],
++    argv     => [ qw(plackup -s Starlet --access-log /dev/null --listen), ":$upstream_port", ASSETS_DIR . "/upstream.psgi" ],
+     is_ready =>  sub {
+         check_port($upstream_port);
+     },

@@ -1,3 +1,9 @@
+h2o (2.2.5-1) unstable; urgency=high
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 01 Jun 2018 17:26:00 +0900
+
 h2o (2.2.4-1) unstable; urgency=high
 
   * New upstream release
