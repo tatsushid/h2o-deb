@@ -29,6 +29,9 @@ echo "deb http://dl.bintray.com/tatsushid/h2o-deb trusty-backports main" | sudo 
 
 # If your system is Ubuntu xenial (16.04)
 echo "deb http://dl.bintray.com/tatsushid/h2o-deb xenial-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
+
+# If your system is Ubuntu bionic (18.04)
+echo "deb http://dl.bintray.com/tatsushid/h2o-deb bionic-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
 ```
 
 Once it has done, you can install packages in the repository by
@@ -59,6 +62,7 @@ Now this understands
 - debian9
 - ubuntu1404
 - ubuntu1604
+- ubuntu1804
 
 build options.
 

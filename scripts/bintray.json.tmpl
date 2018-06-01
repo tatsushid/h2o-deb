@@ -56,6 +56,16 @@
                 "deb_architecture": "amd64",
                 "override": 1
             }
+        },
+        {
+            "includePattern": "./ubuntu1804\.build/(@PKG_NAME@_@PKG_VERSION@.*\.deb)$",
+            "uploadPattern": "pool/main/@PKG_DIR@/$1",
+            "matrixParams": {
+                "deb_distribution": "bionic-backports",
+                "deb_component": "main",
+                "deb_architecture": "amd64",
+                "override": 1
+            }
         }
     ],
 
