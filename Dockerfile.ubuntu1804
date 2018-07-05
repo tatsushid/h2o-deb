@@ -44,6 +44,7 @@ RUN cd $HOME/h2o/h2o-${PKGVER} \
     && mv -f debian/changelog.ubuntu1804 debian/changelog \
     && rm -f debian/changelog.*
 RUN cd $HOME/h2o/h2o-${PKGVER} \
+    && printf "\noverride_dh_builddeb:\n\tdh_builddeb -- --no-uniform-compression" >> debian/rules \
     && dpkg-buildpackage -us -uc \
     && tar -czf /tmp/h2o.tar.gz -C $HOME/h2o --exclude=./h2o-${PKGVER} .
 CMD ["/bin/true"]
