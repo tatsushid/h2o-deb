@@ -2,8 +2,8 @@ FROM debian:8
 ENV DEBEMAIL="tdemachi@gmail.com" DEBFULLNAME="Tatsushi Demachi"
 ARG PKGVER
 ENV PATH_TINY_PERL=libpath-tiny-perl_0.100-1_all.deb
-RUN echo "deb http://httpredir.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/devel.list \
-    && apt-get update \
+RUN echo "deb http://archive.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/devel.list \
+    && apt-get -o Acquire::Check-Valid-Until=false update \
     && apt-get install -y --no-install-recommends \
         bison \
         build-essential \
