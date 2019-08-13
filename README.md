@@ -76,7 +76,7 @@ After building, please copy Debian package under `*.build` directory to your
 system and run
 
 ```bash
-dpkg -i h2o_2.2.5-1_amd64.deb
+dpkg -i h2o_2.2.6-1_amd64.deb
 ```
 
 Once the installation finishes successfully, you can see a configuration file
