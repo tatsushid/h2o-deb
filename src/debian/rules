@@ -29,7 +29,7 @@ include /usr/share/dpkg/default.mk
 
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DWITH_BUNDLED_SSL=on -DWITH_MRUBY=on -DBUILD_SHARED_LIBS=on
+	dh_auto_configure -- -DBUILD_SHARED_LIBS=on
 
 override_dh_auto_clean:
 	rm -f include/h2o.h.gch
