@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 ENV DEBEMAIL="tdemachi@gmail.com" DEBFULLNAME="Tatsushi Demachi"
 ARG PKGVER
-ENV PATH_TINY_PERL=libpath-tiny-perl_0.100-1_all.deb
+ENV PATH_TINY_PERL=libpath-tiny-perl_0.108-1_all.deb
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         automake \
