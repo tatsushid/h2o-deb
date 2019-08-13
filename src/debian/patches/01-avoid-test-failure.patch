@@ -86,3 +86,47 @@
      is_ready =>  sub {
          check_port($upstream_port);
      },
+--- a/t/40session-ticket.t
++++ b/t/40session-ticket.t
+@@ -122,7 +122,7 @@
+ sub test {
+     my $lines = do {
+         my $cmd_opts = (-e "$tempdir/session" ? "-sess_in $tempdir/session" : "") . " -sess_out $tempdir/session";
+-        open my $fh, "-|", "openssl s_client $cmd_opts -connect 127.0.0.1:$server->{tls_port} 2>&1 < /dev/null"
++        open my $fh, "-|", "openssl s_client -tls1_2 $cmd_opts -connect 127.0.0.1:$server->{tls_port} 2>&1 < /dev/null"
+             or die "failed to open pipe:$!";
+         local $/;
+         <$fh>;
+--- a/t/40ssl-cipher-suite.t
++++ b/t/40ssl-cipher-suite.t
+@@ -32,7 +32,7 @@
+ );
+ 
+ # connect to the server with AES256-SHA as the first choice, and check that AES128-SHA was selected
+-my $log = `openssl s_client -cipher AES256-SHA:AES128-SHA -host 127.0.0.1 -port $port < /dev/null 2>&1`;
++my $log = `openssl s_client -tls1_2 -cipher AES256-SHA:AES128-SHA -host 127.0.0.1 -port $port < /dev/null 2>&1`;
+ like $log, qr/^\s*Cipher\s*:\s*AES128-SHA\s*$/m;
+ 
+ done_testing;
+--- a/t/50access-log.t
++++ b/t/50access-log.t
+@@ -178,7 +178,7 @@
+         do {
+             my @expected = (
+                 qr{^2 - - - - - -$}is,
+-                qr{^3 TLSv[0-9.]+ 0 \S+RSA\S+ (?:128|256) - -$}is,
++                qr{^3 TLSv[0-9.]+ 0 \S+(?:RSA|GCM)\S+ (?:128|256) - -$}is,
+             );
+             if (prog_exists("nghttp")) {
+                 push @expected, +(
+--- a/t/50reverse-proxy-session-resumption.t
++++ b/t/50reverse-proxy-session-resumption.t
+@@ -10,6 +10,8 @@
+     unless prog_exists('curl');
+ plan skip_all => 'Starlet not found'
+     unless system('perl -MStarlet /dev/null > /dev/null 2>&1') == 0;
++plan skip_all => 'h2o uses OpenSSL 1.1.1 or higher'
++    if server_features->{OpenSSL} =~ /1\.1\.[1-9]/;
+ 
+ my $tempdir = tempdir(CLEANUP => 1);
+ 
