@@ -4,6 +4,7 @@ TARGZ_FILE := h2o.tar.gz
 IMAGE_NAME := h2o-package
 debian8: IMAGE_NAME := $(IMAGE_NAME)-deb8
 debian9: IMAGE_NAME := $(IMAGE_NAME)-deb9
+debian10: IMAGE_NAME := $(IMAGE_NAME)-deb10
 ubuntu1404: IMAGE_NAME := $(IMAGE_NAME)-ub1404
 ubuntu1604: IMAGE_NAME := $(IMAGE_NAME)-ub1604
 ubuntu1804: IMAGE_NAME := $(IMAGE_NAME)-ub1804
@@ -14,11 +15,12 @@ LIBUV_DSC := $(LIBUV_NAME)-$(LIBUV_RELEASE).dsc
 LIBUV_ORIG := $(LIBUV_NAME).orig.tar.gz
 LIBUV_DEBIAN := $(LIBUV_NAME)-$(LIBUV_RELEASE).debian.tar.xz
 
-.PHONY: all clean debian8 debian9 ubuntu1404 ubuntu1604 ubuntu1804
+.PHONY: all clean debian8 debian9 debian10 ubuntu1404 ubuntu1604 ubuntu1804
 
-all: debian8 debian9 ubuntu1404 ubuntu1604 ubuntu1804
+all: debian8 debian9 debian10 ubuntu1404 ubuntu1604 ubuntu1804
 debian8: debian8.build
 debian9: debian9.build
+debian10: debian10.build
 ubuntu1404: ubuntu1404.build
 ubuntu1604: ubuntu1604.build
 ubuntu1804: ubuntu1804.build
@@ -80,6 +82,7 @@ clean:
 	rm -rf *.build.bak *.build deps tmp bintray work Dockerfile
 	docker images | grep -q $(IMAGE_NAME)-deb8 && docker rmi $(IMAGE_NAME)-deb8 || true
 	docker images | grep -q $(IMAGE_NAME)-deb9 && docker rmi $(IMAGE_NAME)-deb9 || true
+	docker images | grep -q $(IMAGE_NAME)-deb10 && docker rmi $(IMAGE_NAME)-deb10 || true
 	docker images | grep -q $(IMAGE_NAME)-ub1404 && docker rmi $(IMAGE_NAME)-ub1404 || true
 	docker images | grep -q $(IMAGE_NAME)-ub1604 && docker rmi $(IMAGE_NAME)-ub1604 || true
 	docker images | grep -q $(IMAGE_NAME)-ub1804 && docker rmi $(IMAGE_NAME)-ub1804 || true

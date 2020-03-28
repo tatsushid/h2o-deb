@@ -24,6 +24,9 @@ echo "deb http://dl.bintray.com/tatsushid/h2o-deb jessie-backports main" | sudo 
 # If your system is Debian stretch (9.x)
 echo "deb http://dl.bintray.com/tatsushid/h2o-deb stretch-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
 
+# If your system is Debian buster (10.x)
+echo "deb http://dl.bintray.com/tatsushid/h2o-deb buster-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
+
 # If your system is Ubuntu trusty (14.04)
 echo "deb http://dl.bintray.com/tatsushid/h2o-deb trusty-backports main" | sudo tee /etc/apt/sources.list.d/bintray-tatsushid-h2o.list
 
@@ -60,6 +63,7 @@ Now this understands
 
 - debian8
 - debian9
+- debian10
 - ubuntu1404
 - ubuntu1604
 - ubuntu1804

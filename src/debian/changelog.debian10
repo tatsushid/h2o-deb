@@ -1,0 +1,90 @@
+h2o (2.2.6-1~bpo10+1) buster-backports; urgency=medium
+
+  * Rebuild for buster-backports
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Sat, 28 Mar 2020 15:25:38 +0900
+
+h2o (2.2.6-1) unstable; urgency=high
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 14 Aug 2019 04:24:47 +0900
+
+h2o (2.2.5-1) unstable; urgency=high
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 01 Jun 2018 17:26:00 +0900
+
+h2o (2.2.4-1) unstable; urgency=high
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 15 Dec 2017 13:30:01 +0900
+
+h2o (2.2.3-1) unstable; urgency=high
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 18 Oct 2017 16:51:39 +0900
+
+h2o (2.2.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Renew library package symbols
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Sun, 30 Apr 2017 14:14:57 +0900
+
+h2o (2.2.0-2) unstable; urgency=low
+
+  * Fix package dependency at building
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Sat, 08 Apr 2017 16:26:48 +0900
+
+h2o (2.2.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 07 Apr 2017 21:39:20 +0900
+
+h2o (2.1.0-2) unstable; urgency=medium
+
+  * Add missing mruby_handler scripts which are required to start h2o
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 01 Feb 2017 00:14:41 +0900
+
+h2o (2.1.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Sat, 21 Jan 2017 12:21:41 +0900
+
+h2o (2.0.5-1) unstable; urgency=high
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 21 Dec 2016 14:45:09 +0900
+
+h2o (2.0.4-1) unstable; urgency=high
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 14 Sep 2016 16:03:16 +0900
+
+h2o (2.0.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Fri, 09 Sep 2016 01:44:39 +0900
+
+h2o (2.0.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Wed, 24 Aug 2016 01:03:48 +0900
+
+h2o (2.0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Tatsushi Demachi <tdemachi@gmail.com>  Tue, 26 Jul 2016 14:33:56 +0000
