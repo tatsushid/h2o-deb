@@ -120,7 +120,7 @@ case "$1" in
 	esac
 	;;
   status)
-	status_of_proc "$DAEMON" "$NAME" && exit 0 || exit $?
+	status_of_proc ${PIDFILE:+-p ${PIDFILE}} /usr/bin/perl h2o && exit 0 || exit $?
 	;;
   reload|force-reload)
 	#
