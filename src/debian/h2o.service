@@ -1,10 +1,15 @@
 [Unit]
-Description=H2O - the optimized HTTP/1, HTTP/2 server
+Description=Powered HTTP/1.x, HTTP/2 server
+Documentation=man:h2o(1)
+Documentation=file:/usr/share/doc/h2o-doc/index.html
+Documentation=https://h2o.examp1e.net
 After=network.target remote-fs.target nss-lookup.target
 
 [Service]
 Type=simple
-ExecStart=/usr/sbin/h2o -m master -c /etc/h2o/h2o.conf
+Environment=CONFIG=/etc/h2o/h2o.conf
+EnvironmentFile=-/etc/default/h2o
+ExecStart=/usr/bin/h2o -c ${CONFIG} -m master
 ExecReload=/bin/kill -HUP ${MAINPID}
 ExecStop=/bin/kill -TERM ${MAINPID}
 PrivateTmp=true
