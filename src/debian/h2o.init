@@ -18,7 +18,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="optimized HTTP/1 HTTP/2 server"
 NAME=h2o
-CONFIG_FILE=/etc/h2o/h2o.conf
+CONFIG=/etc/h2o/h2o.conf
 DAEMON=/usr/sbin/h2o
 SCRIPTNAME=/etc/init.d/$NAME
 
@@ -28,10 +28,10 @@ SCRIPTNAME=/etc/init.d/$NAME
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
 
-DAEMON_ARGS="-m daemon -c $CONFIG_FILE"
-PIDFILE=`sed -ne 's|pid-file:\s*\([-_./0-9a-zA-Z]\{1,\}\)|\1|p' $CONFIG_FILE`
+DAEMON_ARGS="-m daemon -c $CONFIG"
+PIDFILE=`sed -ne 's|pid-file:\s*\([-_./0-9a-zA-Z]\{1,\}\)|\1|p' $CONFIG`
 if [ -z "$PIDFILE" ]; then
-	echo "pid-file must be defined in $CONFIG_FILE"
+	echo "pid-file must be defined in $CONFIG"
 	exit 1
 fi
 
@@ -88,7 +88,7 @@ do_stop()
 # Function that checks the daemon/service configuration file
 #
 do_configtest() {
-	$DAEMON -t -c $CONFIG_TEST
+	$DAEMON -t -c $CONFIG
 }
 
 #
@@ -97,26 +97,26 @@ do_configtest() {
 do_reload() {
 	# as the running h2o is started by a perl process, (from the start_server) 
 	# so the perl process is the real program to send the signal:
-        log_daemon_msg "Reloading $DESC configuration files" "$NAME"
         start-stop-daemon --oknodo --stop --signal HUP --quiet --pidfile "$PIDFILE" --exec "/usr/bin/perl"
-        log_end_msg $?
+        return "$?"
 }
 
 case "$1" in
   start)
-	[ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
+	log_daemon_msg "Starting $DESC"
 	do_start
 	case "$?" in
-		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+		0|1) log_end_msg 0 ;;
+		2) log_end_msg 1 ;;
 	esac
 	;;
   stop)
-	[ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
+	log_daemon_msg "Stopping $DESC"
 	do_stop
 	case "$?" in
-		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+		0|1) log_end_msg 0 ;;
+		2) log_end_msg 1 ;;
+		*) log_end_msg 0 ;;
 	esac
 	;;
   status)
@@ -127,7 +127,7 @@ case "$1" in
 	# If do_reload() is not implemented then leave this commented out
 	# and leave 'force-reload' as an alias for 'restart'.
 	#
-	log_daemon_msg "Reloading $DESC" "$NAME"
+	log_daemon_msg "Reloading $DESC"
 	if ! do_configtest >/dev/null 2>&1; then
 		log_end_msg 1 # Configuration error
 		exit 0
@@ -140,13 +140,13 @@ case "$1" in
 	# If the "reload" option is implemented then remove the
 	# 'force-reload' alias
 	#
-	log_daemon_msg "Restarting $DESC" "$NAME"
+	log_daemon_msg "Restarting $DESC"
 	do_stop
 	case "$?" in
 	  0|1)
 		do_start
 		case "$?" in
-			0) log_end_msg 0 ;;
+			0) log_end_msg 0;;
 			1) log_end_msg 1 ;; # Old process is still running
 			*) log_end_msg 1 ;; # Failed to start
 		esac
